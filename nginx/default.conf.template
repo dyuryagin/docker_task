@@ -1,0 +1,9 @@
+server {
+    listen  80;
+
+    location / {
+        if ($request_method = POST){
+            proxy_pass http://${APP_ADDRESS}:80;
+        }
+    }
+}
